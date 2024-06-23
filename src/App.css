@@ -1,0 +1,67 @@
+#root {
+  max-width: full;
+  margin: 0 auto;
+  /* // padding: 2rem; */
+  text-align: center;
+  font-family: "DistantGalaxy", sans-serif;
+}
+/* .data {
+  background-color: blue;
+} */
+/* .data1 {
+  background-color: rgb(92, 161, 191);
+  height: 70%;
+} */
+.font-opificio {
+  font-family: "Opificio Bold Rounded", sans-serif;
+}
+body {
+  overflow: hidden;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  background-color: #f1f0ee;
+  font-family: "DistantGalaxy", sans-serif;
+}
+
+.sticky {
+  position: sticky;
+  top: 10px; /* ระบุค่า top ตามต้องการ */
+}
+/* Register your custom font family and tell the browser where to find it. */
