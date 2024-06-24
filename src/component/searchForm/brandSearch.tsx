@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FcLikePlaceholder } from "react-icons/fc";
 
 interface MakeupItem {
   priceInTHB: number;
@@ -43,8 +44,13 @@ const SearchForm: React.FC<SearchFormProps> = ({
 
   return (
     <div>
-      <select value={query} onChange={handleSelectChange}>
-        <option value="">Select a brand...</option>
+      <select
+        className="bg-[#E6F2FF] pl-[10px] pr-[10px] p-[3px] 
+         translate-y-[-4px] rounded-md shadow-sm shadow-gray-300"
+        value={query}
+        onChange={handleSelectChange}
+      >
+        <option value="">shop by brand ...</option>
         {brandOptions.map((option, index) => (
           <option key={index} value={option}>
             {option}

@@ -13,7 +13,14 @@ import {
   VscDebugStart,
 } from "react-icons/vsc";
 import ReactLoading from "react-loading";
-import { FcCursor, FcLikePlaceholder, FcRedo, FcSearch } from "react-icons/fc";
+import {
+  FcAbout,
+  FcCursor,
+  FcFinePrint,
+  FcLikePlaceholder,
+  FcRedo,
+  FcSearch,
+} from "react-icons/fc";
 import { PiShoppingCartFill } from "react-icons/pi";
 
 interface MakeupItem {
@@ -131,8 +138,6 @@ const App: React.FC = () => {
 
       setSearchTerm(""); // เคลียร์ค่าใน input search
       setShowPreviousSearches(false); // ซ่อนแท็บผลการค้นหาก่อนหน้า
-
-      // Optional: สามารถเพิ่มการส่งข้อมูลให้กับ Analytics หรือเพิ่มโค้ดที่ต้องการให้ทำงานหลังจากการค้นหาที่นี่ได้
     }
   };
 
@@ -155,14 +160,14 @@ const App: React.FC = () => {
   };
 
   const renderPreviousSearches = () => {
-    if (showPreviousSearches) {
+    if (showPreviousSearches && previousSearches.length > 0) {
       return (
         <div className="absolute bg-[#9fd1e1] w-[410px] h-[150px] overflow-auto mt-[45px] border border-gray-300 rounded-b-md shadow-lg z-40">
           {previousSearches.map((term, index) => (
             <div
               key={index}
               className="p-2 font-serif text-[15px] cursor-pointer hover:bg-[#d3cfac] hover:text-[#b78e51]"
-              onClick={() => handleSearchTermSelect(term)} // เพิ่ม onClick เพื่อเรียกใช้งาน handleSearchTermSelect
+              onClick={() => handleSearchTermSelect(term)}
             >
               {term}
             </div>
@@ -357,17 +362,17 @@ const App: React.FC = () => {
                             <div className="text-[#a89770] font-bold  pl-[7px] pr-[10px] text-[11px] font-serif  p-[1px] rounded-xl grid gap-[5px]">
                               <p>{item.product_type}</p>
                             </div>
-                            <div className="flex pl-[1px] ">
-                              <div className="text-white bg-[#a1875b] hover:bg-[#71a8bb] font-bold shadow-md shadow-[#c0ad91] pl-[15px] pr-[30px] text-[11px] font-serif  p-[3px] rounded-xl grid">
+                            <div className="flex pl-[1px] pt-[5px]">
+                              <div className="text-white bg-[#a1875b] hover:bg-[#71a8bb] font-bold shadow-md shadow-[#c0ad91] pl-[25px] pr-[40px] text-[11px] font-serif pt-[4px] p-[3px] rounded-xl grid">
                                 <a
                                   href={item.website_link}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
-                                  {item.website_link}
+                                  <span>click me!</span>
                                 </a>
                               </div>
-                              <div className="text-[25px] pr-[10px] translate-x-[-30px]">
+                              <div className="text-[25px] pr-[10px] translate-x-[-30px] hover:text-[27px]">
                                 <FcCursor />
                               </div>
                             </div>
@@ -383,9 +388,18 @@ const App: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="grid justify-center shadow-sm shadow-[#9f835e] pt-[9px] pl-[px] bg-white h-[32px] w-[32px] rounded-full text-[#5893a7] hover:text-[#917a48] text-[18px] translate-x-[-17px] translate-y-[25px] z-0">
-                        <div>
+                      <div>
+                        <div
+                          className="grid justify-center shadow-sm shadow-[#9f835e] pt-[9px] pl-[px] bg-white h-[32px] w-[32px] rounded-full 
+                      text-[#5893a7] hover:text-[#917a48] text-[18px] translate-x-[-17px] translate-y-[20px] z-0"
+                        >
                           <PiShoppingCartFill />
+                        </div>
+                        <div
+                          className="grid justify-center shadow-sm shadow-[#9f835e] pt-[9px] pl-[px] bg-white h-[32px] w-[32px] rounded-full 
+                      text-[#5893a7] hover:bg-gray-100 text-[16px] translate-x-[-16px] translate-y-[25px] z-0"
+                        >
+                          <FcLikePlaceholder />
                         </div>
                       </div>
                     </div>
