@@ -397,7 +397,7 @@ const App: React.FC = () => {
                         </div>
                         <div
                           className="grid justify-center shadow-sm shadow-[#9f835e] pt-[9px] pl-[px] bg-white h-[32px] w-[32px] rounded-full 
-                      text-[#5893a7] hover:bg-gray-100 text-[16px] translate-x-[-16px] translate-y-[25px] z-0"
+                      text-[#5893a7] hover:bg-yellow-700 text-[16px] translate-x-[-16px] translate-y-[25px] z-0"
                         >
                           <FcLikePlaceholder />
                         </div>
