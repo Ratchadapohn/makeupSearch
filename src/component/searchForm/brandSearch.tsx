@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FcLikePlaceholder } from "react-icons/fc";
 
 interface MakeupItem {
   priceInTHB: number;
@@ -19,7 +18,6 @@ interface SearchFormProps {
 }
 
 const SearchForm: React.FC<SearchFormProps> = ({
-  options,
   makeupData,
   onSearchResult,
 }) => {

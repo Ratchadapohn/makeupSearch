@@ -5,23 +5,10 @@ import DropdownButton from "./component/searchForm/searchForm";
 import { FetchData } from "./store/axios";
 import { eyeList, mouthList, faceList, eyebrowList } from "./utils/optionList";
 import Swal from "sweetalert2";
-import {
-  VscAccount,
-  VscGift,
-  VscSearch,
-  VscArrowRight,
-  VscDebugStart,
-} from "react-icons/vsc";
 import ReactLoading from "react-loading";
-import {
-  FcAbout,
-  FcCursor,
-  FcFinePrint,
-  FcLikePlaceholder,
-  FcRedo,
-  FcSearch,
-} from "react-icons/fc";
+import { FcCursor, FcLikePlaceholder, FcRedo, FcSearch } from "react-icons/fc";
 import { PiShoppingCartFill } from "react-icons/pi";
+import { VscAccount, VscGift } from "react-icons/vsc";
 
 interface MakeupItem {
   priceInTHB: number;
@@ -45,7 +32,7 @@ const App: React.FC = () => {
   const [largeImage, setLargeImage] = useState<string | null>(null);
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [resetSearchForm, setResetSearchForm] = useState<number>(0);
+  const [resetSearchForm] = useState<number>(0);
   const [previousSearches, setPreviousSearches] = useState<string[]>([]);
   const [showPreviousSearches, setShowPreviousSearches] =
     useState<boolean>(false);
