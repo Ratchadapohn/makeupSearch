@@ -25,7 +25,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
       </div>
       {hover && (
         <div
-          className="dropdown-content text-[15px] bg-[#dfdbd1] text-left 
+          className="dropdown-content text-[10px] xl:text-[15px]  bg-[#dfdbd1] text-left 
         shadow-sm shadow-gray-500 p-[8px] rounded-xl"
         >
           {itemList.map((item, index) => (

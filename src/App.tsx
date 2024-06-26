@@ -162,7 +162,7 @@ const App: React.FC = () => {
   const renderPreviousSearches = () => {
     if (showPreviousSearches && previousSearches.length > 0) {
       return (
-        <div className="absolute bg-[#9fd1e1] w-[410px] h-[150px] overflow-auto mt-[45px] border border-gray-300 rounded-b-md shadow-lg z-40">
+        <div className="absolute bg-[#9fd1e1] w-[410px] h-[150px]  overflow-auto mt-[45px] border border-gray-300 rounded-b-md shadow-lg z-40">
           {previousSearches.map((term, index) => (
             <div
               key={index}
@@ -195,16 +195,19 @@ const App: React.FC = () => {
 
           <div className=" bg-white h-[45px] flex justify-around pt-[12px] font-extrabold text-[15px] position font-serif text-[#926065] ">
             <div
-              className="text-[25px] pl-[90px] font-[20px] text-bold  "
+              className="text-[25px] pl-[2px] xl:pl-[90px] font-[20px] text-bold  "
               onClick={handleClick}
             >
               <img
-                className="h-[250px] translate-y-[-118px] translate-x-[-39px] relative w-[190px]"
+                className="h-[10px] w-[10px] xl:h-[250px] xl:w-[190px] translate-y-[-118px] translate-x-[-39px] relative "
                 src="/42.png"
                 alt="makeup"
               />
             </div>
-            <div className="flex gap-[35px] flex-wrap relative z-30">
+            <div
+              className="flex gap-[10px] text-[10px] xl:text-[15px]  flex-wrap relative z-30
+            xl:gap-[35px]"
+            >
               <div className="mb-4 relative">
                 <DropdownButton
                   onSelect={handleDropdown}
@@ -233,7 +236,7 @@ const App: React.FC = () => {
                   itemList={eyebrowList}
                 />
               </div>
-              <div className="mb-4 relative">
+              <div className="mb-4 relative ">
                 <SearchForm
                   key={resetSearchForm}
                   options={makeupData.map((item) => item.brand)}
@@ -252,35 +255,37 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#9fd1e1] position h-[160px] ">
-            <div className="flex  gap-[10px] position pt-[60px] pb-[20px]  ">
+          <div className="bg-[#9fd1e1] position h-[120px]  xl:h-[160px]">
+            <div className="flex  gap-[5px] xl:gap-[10px] position pt-[60px] pb-[20px]  ">
               <img
-                className="h-[140px] translate-y-[-40px] translate-x-[130px] relative w-[240px] 
-"
+                className="h-[100px] w-[170px] translate-y-[-40px] translate-x-[30px] relative 
+                            xl:h-[140px] xl:w-[240px] xl:translate-x-[130px]"
                 src="/7.png"
                 alt="makeup"
                 onClick={handleClick}
               />
               <img
-                className="h-[200px] w-[230px] translate-y-[-95px] translate-x-[-26px] relative "
+                className="h-[100px] w-[130px] translate-y-[-65px] translate-x-[-60px] relative
+                xl:h-[200px] xl:w-[230px] xl:translate-y-[-95px]  xl:translate-x-[-26px]  "
                 src="/41.png"
                 alt="makeup"
                 onClick={handleClick}
               />
 
-              <div className="bg-white text-white flex justify-between relative translate-x-[60px] rounded-md h-[35px] w-[420px] shadow-sm shadow-[#816d4e] z-20">
-                <div className=" ">
-                  <div className="relative flex font-serif shadow-sm shadow-[#816d4e]">
+              <div className=" text-white flex justify-between relative translate-x-[60px] rounded-md h-[35px] w-[420px]  z-20">
+                <div className="   xl:translate-x-[31px] translate-x-[-101px]">
+                  <div className="relative flex font-serif shadow-sm rounded-md shadow-[#816d4e] ">
                     <input
                       type="text"
                       placeholder="search"
-                      className="bg-white text-[#b78e51] rounded-l-md pl-[40px] h-[35px] w-[420px]"
+                      className=" text-[#b78e51] rounded-l-md pl-[40px]  w-[150px]
+                      xl:h-[35px] xl:w-[420px]"
                       value={searchTerm}
                       onChange={handleChange}
                       onKeyDown={handleKeyPress}
                       onClick={togglePreviousSearches}
                     />
-                    <div className="grid translate-x-[-413px]  font-extrabold translate-y-[-10px] ">
+                    <div className="grid xl:translate-x-[-413px]  font-extrabold translate-y-[-10px] translate-x-[-229px] ">
                       {renderPreviousSearches()}
                     </div>
                     <button
@@ -321,15 +326,23 @@ const App: React.FC = () => {
           </div>
         </div>
         <div className="position">
-          <div className="grid grid-cols-3 gap-[25px] justify-center bg-[#f1f0ee] overflow-auto h-[500px] w-[1200px] p-[20px] pl-[80px] pr-[30px]">
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-[5px] xl:gap-[25px] justify-center bg-[#f1f0ee] overflow-auto 
+            h-[450px] w-[550px] p-[2px] pl-[42px] pr-[2px]
+            md:h-[450px] md:w-[970px]
+            xl:h-[500px] xl:w-[1200px] xl:p-[20px] xl:pl-[80px] xl:pr-[30px]"
+          >
             {filteredMakeupData.length > 0 ? (
               filteredMakeupData.map((item: MakeupItem, index: number) => (
-                <div key={index} className="p-[30px] w-[270px] h-[370px]">
-                  <div className="p-[8px] grid  pt-[20px] gap-[20px] h-[240px] bg-[#eadfc7]  shadow-sm shadow-[#b9a383] w-[270px]">
+                <div
+                  key={index}
+                  className="p-[5px] w-[50px] h-[270px] xl:p-[20px] xl:w-[270px] xl:h-[360px]"
+                >
+                  <div className="p-[8px] grid  pt-[20px] gap-[10px] pl-[1px] xl:pl-[10px] xl:gap-[25px] h-[180px] w-[210px] xl:h-[240px] xl:w-[270px] bg-[#eadfc7]  shadow-sm shadow-[#b9a383] ">
                     <div className="grid justify-center w-[270px] ">
                       <div className=" w-[150px] pb-[15px] ">
                         <img
-                          className="w-[200px] h-[150px] border-[3px] hover:shadow-[#6e604b] shadow-md shadow-[#c0ad91] border-white"
+                          className="w-[120px] h-[110px] xl:w-[200px] xl:h-[150px] border-[3px] hover:shadow-[#6e604b]  shadow-md shadow-[#c0ad91] border-white"
                           src={item.api_featured_image}
                           alt={item.name}
                           onClick={() =>
@@ -337,17 +350,20 @@ const App: React.FC = () => {
                           }
                         />
                       </div>
-                      <div className="text-white bg-[#bda661] font-bold shadow-sm shadow-[#c0ad91] pl-[9px] pr-[10px] text-[13px] font-serif  p-[1px] rounded-xl">
+                      <div
+                        className="text-white bg-[#bda661] font-bold shadow-sm shadow-[#c0ad91] pl-[2px] pr-[5px] text-[11px]
+                      xl:pl-[9px] xl:pr-[10px] xl:text-[13px] xl:translate-x-[2px] translate-x-[-20px] font-serif  p-[1px] rounded-xl"
+                      >
                         <div>{item.brand}</div>
                       </div>
                     </div>
 
-                    <div className="flex justify-between pt-[5px] pb-[15px] gap-[20px]  ">
+                    <div className="flex justify-between pt-[1px]  xl:pt-[5px] pb-[5px] xl:pb-[15px] gap-[5px] xl:gap-[20px]  ">
                       <div className="justify-start text-left pt-[15px] w-[220px] ">
                         <div className="justify-start grid">
                           <div className="grid justify-start">
                             <div
-                              className="text-[17px] font-extrabold pl-[7px] font-serif text-[#926065] hover:cursor-pointer hover:text-[#6799aa]"
+                              className="text-[10px] xl:text-[17px] font-extrabold pl-[7px] font-serif text-[#926065] hover:cursor-pointer hover:text-[#6799aa]"
                               onClick={() => {
                                 Swal.fire({
                                   title: item.name,
@@ -363,7 +379,10 @@ const App: React.FC = () => {
                               <p>{item.product_type}</p>
                             </div>
                             <div className="flex pl-[1px] pt-[5px]">
-                              <div className="text-white bg-[#a1875b] hover:bg-[#71a8bb] font-bold shadow-md shadow-[#c0ad91] pl-[25px] pr-[40px] text-[11px] font-serif pt-[4px] p-[3px] rounded-xl grid">
+                              <div
+                                className="text-white bg-[#a1875b] hover:bg-[#71a8bb] font-bold shadow-md shadow-[#c0ad91] pl-[25px] pr-[40px] text-[8px]
+                               xl:pl-[25px] xl:pr-[40px] xl:text-[11px] font-serif  xl:pt-[4px] p-[5px] rounded-xl grid"
+                              >
                                 <a
                                   href={item.website_link}
                                   target="_blank"
@@ -372,16 +391,16 @@ const App: React.FC = () => {
                                   <span>click me!</span>
                                 </a>
                               </div>
-                              <div className="text-[25px] pr-[10px] translate-x-[-30px] hover:text-[27px]">
+                              <div className="text-[20px] xl:text-[25px] pr-[10px] translate-x-[-30px] hover:text-[27px]">
                                 <FcCursor />
                               </div>
                             </div>
                             <div>
-                              <p className="text-[50px]  translate-y-[-298px] translate-x-[37px]">
+                              <p className="text-[50px] translate-y-[-238px] xl:translate-y-[-298px] translate-x-[37px]">
                                 <FcLikePlaceholder />
                               </p>
 
-                              <div className=" h-[20px] w-[20px] text-[14px]  translate-y-[-331px] translate-x-[53px] flex justify-center items-center text-[#a68c45]  font-bold rounded-full">
+                              <div className=" h-[20px] w-[20px] text-[14px] translate-y-[-271px] xl:translate-y-[-331px] translate-x-[53px] flex justify-center items-center text-[#a68c45]  font-bold rounded-full">
                                 {index + 1}
                               </div>
                             </div>
@@ -390,14 +409,14 @@ const App: React.FC = () => {
                       </div>
                       <div>
                         <div
-                          className="grid justify-center shadow-sm shadow-[#9f835e] pt-[9px] pl-[px] bg-white h-[32px] w-[32px] rounded-full 
-                      text-[#5893a7] hover:text-[#917a48] text-[18px] translate-x-[-17px] translate-y-[20px] z-0"
+                          className="grid justify-center shadow-sm shadow-[#9f835e] pt-[5px] xl:pt-[9px]   bg-white h-[22px] w-[22px] xl:h-[32px] xl:w-[32px]  rounded-full 
+                      text-[#5893a7] hover:text-[#917a48] text-[12px] xl:text-[15px] translate-x-[-60px] translate-y-[15px] z-0 xl:translate-x-[-15px]"
                         >
                           <PiShoppingCartFill />
                         </div>
                         <div
-                          className="grid justify-center shadow-sm shadow-[#9f835e] pt-[9px] pl-[px] bg-white h-[32px] w-[32px] rounded-full 
-                      text-[#5893a7] hover:bg-yellow-700 text-[16px] translate-x-[-16px] translate-y-[25px] z-0"
+                          className="grid justify-center shadow-sm shadow-[#9f835e] pt-[5px] xl:pt-[9px]  bg-white h-[22px] w-[22px] xl:h-[32px] xl:w-[32px]  rounded-full 
+                      text-[#5893a7] hover:text-[#917a48] text-[12px] xl:text-[18px] translate-x-[-60px] translate-y-[30px] xl:translate-x-[-15px]  xl:translate-y-[25px] z-0"
                         >
                           <FcLikePlaceholder />
                         </div>
@@ -414,13 +433,13 @@ const App: React.FC = () => {
         <div className="bg-[#9fd1e1] flex justify-center position  h-[99px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
-              className="h-[570px] translate-y-[-277px] translate-x-[150px] w-[450px] relative"
+              className="h-[520px] w-[400px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] translate-x-[210px] xl:translate-x-[150px] relative"
               src="/The beauty bar.png"
               alt="makeup"
             />
           </p>
           <img
-            className="h-[620px] translate-y-[-481px] translate-x-[350px] w-[500px] relative"
+            className="h-[520px] w-[400px] xl:h-[620px] xl:w-[500px] translate-y-[-481px] translate-x-[350px]  relative"
             src="/pngegg-6.png"
             alt="makeup"
           />
