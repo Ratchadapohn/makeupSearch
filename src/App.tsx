@@ -420,7 +420,7 @@ const App: React.FC = () => {
         <div className="bg-[#9fd1e1] flex justify-center position  h-[99px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
-              className="h-[520px] w-[400px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] translate-x-[210px] xl:translate-x-[150px] relative"
+              className="h-[520px] w-[400px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
               src="/The beauty bar.png"
               alt="makeup"
             />
