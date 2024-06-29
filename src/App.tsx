@@ -151,7 +151,7 @@ const App: React.FC = () => {
   const renderPreviousSearches = () => {
     if (showPreviousSearches && previousSearches.length > 0) {
       return (
-        <div className="absolute bg-[#9fd1e1] w-[410px] h-[150px]  overflow-auto mt-[45px] border border-gray-300 rounded-b-md shadow-lg z-40">
+        <div className="absolute bg-[#9fd1e1] w-[200px] xl:w-[410px] h-[150px]  overflow-auto mt-[45px] border border-gray-300 rounded-b-md shadow-lg z-40">
           {previousSearches.map((term, index) => (
             <div
               key={index}
@@ -194,7 +194,7 @@ const App: React.FC = () => {
               />
             </div>
             <div
-              className="flex gap-[10px] text-[10px] xl:text-[15px]  flex-wrap relative z-30
+              className="flex gap-[8px] text-[10px] xl:text-[15px]  flex-wrap relative z-30
             xl:gap-[35px]"
             >
               <div className="mb-4 relative">
@@ -235,7 +235,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-[10px] text-[20px] pr-[40px] font-black">
+            <div className="flex gap-[10px] text-[20px] pr-[7px] xl:pr-[40px] font-black">
               <div>
                 <VscGift />
               </div>
@@ -274,7 +274,7 @@ const App: React.FC = () => {
                       onKeyDown={handleKeyPress}
                       onClick={togglePreviousSearches}
                     />
-                    <div className="grid xl:translate-x-[-413px]  font-extrabold translate-y-[-10px] translate-x-[-229px] ">
+                    <div className="grid xl:translate-x-[-413px]  font-extrabold translate-y-[-10px] translate-x-[-149px] ">
                       {renderPreviousSearches()}
                     </div>
                     <button
@@ -316,9 +316,9 @@ const App: React.FC = () => {
         </div>
         <div className="position pl-[10%] xl:pl-[0px]">
           <div
-            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-[10px]
+            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 md:grid-cols-4 gap-[5px]
              xl:gap-[25px] justify-between bg-[#f1f0ee] overflow-auto 
-            h-[450px] w-[360px] p-[2px] pl-[15px] pr-[2px]
+            h-[450px] w-[440px] p-[2px] pl-[15px] pr-[2px]
             md:h-[520px] md:w-[970px]
             xl:h-[500px] xl:w-[1200px] xl:p-[20px] xl:pl-[80px] xl:pr-[30px]"
           >
@@ -390,11 +390,11 @@ const App: React.FC = () => {
                               </div>
                             </div>
                             <div>
-                              <p className="text-[35px] xl:text-[50px] translate-y-[-114px] xl:translate-y-[-298px] xl:translate-x-[19px] translate-x-[-5px]">
+                              <p className="text-[35px] xl:text-[50px] translate-y-[-204px] xl:translate-y-[-298px] xl:translate-x-[19px] translate-x-[2px]">
                                 <FcLikePlaceholder />
                               </p>
 
-                              <div className=" h-[20px] w-[20px] text-[10px] xl:text-[14px] translate-y-[-140px] xl:translate-y-[-331px] translate-x-[3px] xl:translate-x-[33px] flex justify-center items-center text-[#a68c45]  font-bold rounded-full">
+                              <div className=" h-[20px] w-[20px] text-[10px] xl:text-[14px] translate-y-[-230px] xl:translate-y-[-331px] translate-x-[9px] xl:translate-x-[33px] flex justify-center items-center text-[#a68c45]  font-bold rounded-full">
                                 {index + 1}
                               </div>
                             </div>
