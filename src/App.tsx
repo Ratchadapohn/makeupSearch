@@ -420,13 +420,13 @@ const App: React.FC = () => {
         <div className="bg-[#9fd1e1] flex justify-center position  h-[99px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
-              className="h-[520px] w-[400px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
+              className="h-[1px] w-[1px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
               src="/The beauty bar.png"
               alt="makeup"
             />
           </p>
           <img
-            className="h-[520px] w-[400px] xl:h-[620px] xl:w-[500px] translate-y-[-481px] translate-x-[350px]  relative"
+            className="h-[1px] w-[1px] xl:h-[620px] xl:w-[500px] translate-y-[-481px] translate-x-[350px]  relative"
             src="/pngegg-6.png"
             alt="makeup"
           />
