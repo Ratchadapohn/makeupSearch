@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import SearchForm from "./component/searchForm/brandSearch";
 import DropdownButton from "./component/searchForm/searchForm";
-import { fetchData } from "./store/axios";
+
 import { eyeList, mouthList, faceList, eyebrowList } from "./utils/optionList";
 import Swal from "sweetalert2";
 import ReactLoading from "react-loading";
