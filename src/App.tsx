@@ -314,10 +314,10 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="position  ">
+        <div className="position justify-center ">
           <div
-            className="grid grid-cols-2 xl:grid-cols-3 md:grid-cols-4 gap-[5px]
-             xl:gap-[25px] justify-between bg-[#f1f0ee] overflow-auto 
+            className="grid justify-center pl-[50px] grid-cols-2 xl:grid-cols-3 md:grid-cols-4 gap-[5px]
+             xl:gap-[25px] bg-[#f1f0ee] overflow-auto 
             h-[520px] w-[440px] p-[2px]  pr-[2px]
             md:h-[520px] md:w-[970px]
             xl:h-[500px] xl:w-[1200px] xl:p-[20px] xl:pl-[80px] xl:pr-[30px]"
@@ -424,7 +424,7 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="bg-[#9fd1e1] flex justify-center position xl:h-[199px] h-[90px]">
+        <div className="bg-[#9fd1e1] flex justify-center position  xl:h-[190px] h-[90px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
               className="h-[1px] w-[1px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
