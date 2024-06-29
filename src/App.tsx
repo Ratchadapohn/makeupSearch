@@ -424,7 +424,7 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="bg-[#9fd1e1] flex justify-center position xl:h-[199px] h-[50px]">
+        <div className="bg-[#9fd1e1] flex justify-center position xl:h-[199px] h-[90px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
               className="h-[1px] w-[1px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
