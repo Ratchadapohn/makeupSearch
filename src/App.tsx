@@ -314,7 +314,7 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="position pl-[10%] xl:pl-[0px]">
+        <div className="position  ">
           <div
             className="grid grid-cols-2 xl:grid-cols-3 md:grid-cols-4 gap-[5px]
              xl:gap-[25px] justify-between bg-[#f1f0ee] overflow-auto 
