@@ -54,7 +54,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       try {
         const response = await axios.get<MakeupItem[]>(
-          "http://makeup-api.herokuapp.com/api/v1/products.json?brand"
+          "https://makeup-api.herokuapp.com/api/v1/products.json?brand"
         );
         setMakeupData(response.data);
         setFilteredMakeupData(response.data);
