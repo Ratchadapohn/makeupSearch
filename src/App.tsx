@@ -176,7 +176,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <div className="">
+      <div className="overflow-hidden h-screen">
         <div>
           <div className="bg-[#b78e51] text-white text-[12px]">
             <span>{currentDateTime}</span>
@@ -424,7 +424,7 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="bg-[#9fd1e1] flex justify-center position  h-[199px]">
+        <div className="bg-[#9fd1e1] flex justify-center position xl:h-[199px] h-[50px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
               className="h-[1px] w-[1px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
