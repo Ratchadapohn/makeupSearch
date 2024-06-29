@@ -60,7 +60,7 @@ const App: React.FC = () => {
         setFilteredMakeupData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setMakeupData([]); // หรือจะ setMakeupData(null) ก็ได้ตามที่ต้องการ
+        setMakeupData([]);
       } finally {
         setIsLoading(false);
       }
@@ -314,10 +314,11 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="position">
+        <div className="position pl-[10%] xl:pl-[0px]">
           <div
-            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-[5px] xl:gap-[25px] justify-center bg-[#f1f0ee] overflow-auto 
-            h-[450px] w-[550px] p-[2px] pl-[42px] pr-[2px]
+            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-[10px]
+             xl:gap-[25px] justify-between bg-[#f1f0ee] overflow-auto 
+            h-[450px] w-[360px] p-[2px] pl-[15px] pr-[2px]
             md:h-[520px] md:w-[970px]
             xl:h-[500px] xl:w-[1200px] xl:p-[20px] xl:pl-[80px] xl:pr-[30px]"
           >
@@ -325,13 +326,17 @@ const App: React.FC = () => {
               filteredMakeupData.map((item: MakeupItem, index: number) => (
                 <div
                   key={index}
-                  className="p-[5px] w-[50px] h-[270px] xl:p-[20px] xl:w-[270px]  xl:h-[360px]"
+                  className="p-[5px] w-[30px] h-[270px] xl:p-[20px] xl:w-[270px]  xl:h-[360px] xl:pl-[]"
                 >
-                  <div className="p-[8px] grid  pt-[20px] gap-[10px] pl-[1px] xl:pl-[10px] xl:gap-[25px] h-[180px] w-[210px]  xl:h-[240px] xl:w-[270px] bg-[#eadfc7]  shadow-sm shadow-[#b9a383] ">
-                    <div className="grid justify-center w-[270px] ">
+                  <div
+                    className="p-[8px] grid  pt-[20px] gap-[10px]  xl:pl-[10px] xl:gap-[25px]
+                   h-[160px] w-[150px]  xl:h-[240px] xl:w-[270px] bg-[#eadfc7]  shadow-sm shadow-[#b9a383] "
+                  >
+                    <div className="grid justify-start xl:pl-[19%] pl-[9%]">
                       <div className=" w-[150px] pb-[15px] ">
                         <img
-                          className="w-[120px] h-[110px] xl:w-[200px] xl:h-[150px] border-[3px] hover:shadow-[#6e604b]  shadow-md shadow-[#c0ad91] border-white"
+                          className="w-[100px]  h-[100px] xl:w-[250px] xl:h-[150px] border-[3px]
+                           hover:shadow-[#6e604b]  shadow-md shadow-[#c0ad91] border-white"
                           src={item.api_featured_image}
                           alt={item.name}
                           onClick={() =>
@@ -340,19 +345,19 @@ const App: React.FC = () => {
                         />
                       </div>
                       <div
-                        className="text-white bg-[#bda661] font-bold shadow-sm shadow-[#c0ad91] pl-[2px] pr-[5px] text-[11px]
-                      xl:pl-[9px] xl:pr-[10px] xl:text-[13px] xl:translate-x-[2px] translate-x-[-20px] font-serif  p-[1px] rounded-xl"
+                        className="text-white bg-[#bda661] font-bold shadow-sm shadow-[#c0ad91]  text-[9px]
+                      xl:pl-[9px] xl:pr-[10px] xl:text-[13px] w-[130px] xl:w-[200px] xl:translate-x-[-17px] xl:translate-y-[2px] translate-x-[-20px] font-serif  p-[1px] rounded-xl"
                       >
                         <div>{item.brand}</div>
-                      </div>
+                      </div>{" "}
                     </div>
 
                     <div className="flex justify-between pt-[1px]  xl:pt-[5px] pb-[5px] xl:pb-[15px] gap-[5px] xl:gap-[20px]  ">
-                      <div className="justify-start text-left pt-[15px] w-[220px] ">
+                      <div className="justify-start text-left pt-[15px] w-[170px] ">
                         <div className="justify-start grid">
                           <div className="grid justify-start">
                             <div
-                              className="text-[10px] xl:text-[17px] font-extrabold pl-[7px] font-serif text-[#926065] hover:cursor-pointer hover:text-[#6799aa]"
+                              className="text-[8px] xl:text-[17px] w-[110px] xl:w-[210px] font-extrabold pl-[7px] font-serif text-[#926065] hover:cursor-pointer hover:text-[#6799aa]"
                               onClick={() => {
                                 Swal.fire({
                                   title: item.name,
@@ -385,11 +390,11 @@ const App: React.FC = () => {
                               </div>
                             </div>
                             <div>
-                              <p className="text-[50px] translate-y-[-238px] xl:translate-y-[-298px] translate-x-[37px]">
+                              <p className="text-[35px] xl:text-[50px] translate-y-[-114px] xl:translate-y-[-298px] xl:translate-x-[19px] translate-x-[-5px]">
                                 <FcLikePlaceholder />
                               </p>
 
-                              <div className=" h-[20px] w-[20px] text-[14px] translate-y-[-271px] xl:translate-y-[-331px] translate-x-[53px] flex justify-center items-center text-[#a68c45]  font-bold rounded-full">
+                              <div className=" h-[20px] w-[20px] text-[10px] xl:text-[14px] translate-y-[-140px] xl:translate-y-[-331px] translate-x-[3px] xl:translate-x-[33px] flex justify-center items-center text-[#a68c45]  font-bold rounded-full">
                                 {index + 1}
                               </div>
                             </div>
