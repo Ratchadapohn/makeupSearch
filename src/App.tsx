@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import SearchForm from "./component/searchForm/brandSearch";
 import DropdownButton from "./component/searchForm/searchForm";
-import { FetchData } from "./store/axios";
+import { fetchData } from "./store/axios";
 import { eyeList, mouthList, faceList, eyebrowList } from "./utils/optionList";
 import Swal from "sweetalert2";
 import ReactLoading from "react-loading";
 import { FcCursor, FcLikePlaceholder, FcRedo, FcSearch } from "react-icons/fc";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { VscAccount, VscGift } from "react-icons/vsc";
+import axios from "axios";
 
 interface MakeupItem {
   priceInTHB: number;
@@ -49,22 +50,23 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchDataFromApi = async () => {
       setIsLoading(true);
       try {
-        const data: MakeupItem[] | null = await FetchData();
-        if (data) {
-          setMakeupData(data);
-          setFilteredMakeupData(data);
-        }
+        const response = await axios.get<MakeupItem[]>(
+          "http://makeup-api.herokuapp.com/api/v1/products.json?brand"
+        );
+        setMakeupData(response.data);
+        setFilteredMakeupData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setMakeupData([]); // หรือจะ setMakeupData(null) ก็ได้ตามที่ต้องการ
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchData();
+    fetchDataFromApi();
   }, []);
 
   useEffect(() => {
@@ -259,8 +261,8 @@ const App: React.FC = () => {
                 onClick={handleClick}
               />
 
-              <div className=" text-white flex justify-between relative translate-x-[60px] rounded-md h-[35px] w-[420px]  z-20">
-                <div className="   xl:translate-x-[31px] translate-x-[-101px]">
+              <div className=" text-white flex justify-between relative translate-x-[60px] rounded-md h-[35px] w-[420px]   z-20">
+                <div className="   xl:translate-x-[31px] md:translate-x-[41px] translate-x-[-101px]">
                   <div className="relative flex font-serif shadow-sm rounded-md shadow-[#816d4e] ">
                     <input
                       type="text"
@@ -316,16 +318,16 @@ const App: React.FC = () => {
           <div
             className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-[5px] xl:gap-[25px] justify-center bg-[#f1f0ee] overflow-auto 
             h-[450px] w-[550px] p-[2px] pl-[42px] pr-[2px]
-            md:h-[450px] md:w-[970px]
+            md:h-[520px] md:w-[970px]
             xl:h-[500px] xl:w-[1200px] xl:p-[20px] xl:pl-[80px] xl:pr-[30px]"
           >
             {filteredMakeupData.length > 0 ? (
               filteredMakeupData.map((item: MakeupItem, index: number) => (
                 <div
                   key={index}
-                  className="p-[5px] w-[50px] h-[270px] xl:p-[20px] xl:w-[270px] xl:h-[360px]"
+                  className="p-[5px] w-[50px] h-[270px] xl:p-[20px] xl:w-[270px]  xl:h-[360px]"
                 >
-                  <div className="p-[8px] grid  pt-[20px] gap-[10px] pl-[1px] xl:pl-[10px] xl:gap-[25px] h-[180px] w-[210px] xl:h-[240px] xl:w-[270px] bg-[#eadfc7]  shadow-sm shadow-[#b9a383] ">
+                  <div className="p-[8px] grid  pt-[20px] gap-[10px] pl-[1px] xl:pl-[10px] xl:gap-[25px] h-[180px] w-[210px]  xl:h-[240px] xl:w-[270px] bg-[#eadfc7]  shadow-sm shadow-[#b9a383] ">
                     <div className="grid justify-center w-[270px] ">
                       <div className=" w-[150px] pb-[15px] ">
                         <img
@@ -417,7 +419,7 @@ const App: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="bg-[#9fd1e1] flex justify-center position  h-[99px]">
+        <div className="bg-[#9fd1e1] flex justify-center position  h-[199px]">
           <p className="grid justify-center pt-[40px] font-extrabold text-[#804d3a]">
             <img
               className="h-[1px] w-[1px] xl:h-[570px] xl:w-[450px]  translate-y-[-247px] xl:translate-y-[-277px] translate-x-[210px] xl:translate-x-[150px] relative"
