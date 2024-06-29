@@ -316,9 +316,9 @@ const App: React.FC = () => {
         </div>
         <div className="position pl-[10%] xl:pl-[0px]">
           <div
-            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 md:grid-cols-4 gap-[5px]
+            className="grid grid-cols-2 xl:grid-cols-3 md:grid-cols-4 gap-[5px]
              xl:gap-[25px] justify-between bg-[#f1f0ee] overflow-auto 
-            h-[450px] w-[440px] p-[2px] pl-[15px] pr-[2px]
+            h-[520px] w-[440px] p-[2px]  pr-[2px]
             md:h-[520px] md:w-[970px]
             xl:h-[500px] xl:w-[1200px] xl:p-[20px] xl:pl-[80px] xl:pr-[30px]"
           >
