@@ -194,7 +194,7 @@ const App: React.FC = () => {
               />
             </div>
             <div
-              className="flex gap-[6px] text-[8px] xl:text-[15px]  flex-wrap relative z-30
+              className="flex gap-[6px] text-[8px] md:gap-[12px] md:text-[13px] xl:text-[15px]  flex-wrap relative z-30
             xl:gap-[35px]"
             >
               <div className="mb-4 relative">
@@ -235,11 +235,11 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-[10px] text-[10px] xl:text-[20px] pr-[2px] xl:pr-[40px] font-black">
+            <div className="flex gap-[10px] text-[10px] md:text-[20px] xl:text-[20px] pr-[2px] xl:pr-[40px] font-black">
               <div>
                 <VscGift />
               </div>
-              <div className="text-[18px]">
+              <div className="text-[9px] xl:text-[18px] md:text-[18px]">
                 <VscAccount />
               </div>
             </div>
@@ -261,13 +261,16 @@ const App: React.FC = () => {
                 onClick={handleClick}
               />
 
-              <div className=" text-white flex justify-between relative translate-x-[60px] rounded-md h-[35px] w-[420px]   z-20">
+              <div
+                className=" text-white flex justify-between relative translate-x-[60px] 
+              rounded-md h-[15px] w-[100px] md:w-[300px] xl:h-[35px] xl:w-[420px]  z-20"
+              >
                 <div className="   xl:translate-x-[31px] md:translate-x-[41px] translate-x-[-101px]">
                   <div className="relative flex font-serif shadow-sm rounded-md shadow-[#816d4e] ">
                     <input
                       type="text"
                       placeholder="search"
-                      className=" text-[#b78e51] rounded-l-md pl-[40px]  w-[150px]
+                      className=" text-[#b78e51] rounded-l-md pl-[12px] xl:pl-[40px] md:w-[250px] w-[160px] h-[20px] 
                       xl:h-[35px] xl:w-[420px]"
                       value={searchTerm}
                       onChange={handleChange}
@@ -278,7 +281,8 @@ const App: React.FC = () => {
                       {renderPreviousSearches()}
                     </div>
                     <button
-                      className="font-extrabold rounded-r-md pl-[30px] pr-[30px]h-[35px] bg-[#b78e51] w-[82px] text-[25px] pt-[2px]"
+                      className="font-extrabold rounded-r-md pl-[8px] md:pl-[18px] xl:pl-[30px] pr-[30px]h-[35px]
+                       bg-[#b78e51] w-[32px] md:w-[52px] text-[18px] xl:w-[82px] xl:text-[25px]  pt-[2px]"
                       onClick={handleSearchReset}
                     >
                       <FcSearch />
