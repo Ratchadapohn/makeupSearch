@@ -194,7 +194,7 @@ const App: React.FC = () => {
               />
             </div>
             <div
-              className="flex gap-[8px] text-[10px] xl:text-[15px]  flex-wrap relative z-30
+              className="flex gap-[6px] text-[8px] xl:text-[15px]  flex-wrap relative z-30
             xl:gap-[35px]"
             >
               <div className="mb-4 relative">
@@ -235,7 +235,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-[10px] text-[20px] pr-[7px] xl:pr-[40px] font-black">
+            <div className="flex gap-[10px] text-[10px] xl:text-[20px] pr-[2px] xl:pr-[40px] font-black">
               <div>
                 <VscGift />
               </div>
