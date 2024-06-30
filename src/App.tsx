@@ -270,7 +270,7 @@ const App: React.FC = () => {
                     <input
                       type="text"
                       placeholder="search"
-                      className=" text-[#b78e51] rounded-l-md pl-[12px] xl:pl-[40px] md:w-[250px] w-[160px] h-[20px] 
+                      className=" text-[#b78e51] rounded-l-md pl-[12px] xl:pl-[40px] md:w-[250px] w-[100px] h-[20px] 
                       xl:h-[35px] xl:w-[420px]"
                       value={searchTerm}
                       onChange={handleChange}
